@@ -33,7 +33,7 @@ yum-config-manager \
     https://download.docker.com/linux/centos/docker-ce.repo
 
 # install docker ce
-yum install docker-ce docker-ce-cli containerd.io
+yum install -y docker-ce docker-ce-cli containerd.io
 
 # list the available version in the repo
 yum list docker-ce --showduplicates | sort -r
