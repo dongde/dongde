@@ -12,7 +12,8 @@
 
 #================================================================
 
-# check root
+# check root, non-root exit
+[ 0 -ne $UID ] || exit 0
 
 # remove system docker component element
 yum remove docker \
@@ -24,7 +25,7 @@ yum remove docker \
                   docker-logrotate \
                   docker-engine
 
-# SET UP THE REPOSITORY
+# set up the repository
 yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
