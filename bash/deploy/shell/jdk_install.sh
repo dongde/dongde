@@ -1,20 +1,18 @@
 #!/bin/bash
-#===============================================================================
+#================================================================
 #
-#          FILE:  jdk_install.sh
-#
-#         USAGE:  ./jdk_install.sh
-#
-#   DESCRIPTION:  
-#
-#       OPTIONS:  ---
-#        AUTHOR:  dongni, 2303134@qq.com
-#       VERSION:  1.0
-#       CREATED:  11/08/2018 12:11:34 CST
-#      REVISION:  ---
-#===============================================================================
+#  @Author        : dongde
+#  @Mail          : dongde@dongde.org
+#  @github        : https://github.com/dongde
+#  @Created Time  : 2019-04-09 14:22:01
+#  @Last Modified : 2019-04-09 14:22:01
 
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin 
+#  @File Name     : install_jdk1.8.0_171.sh
+#  @Description   :
+
+#================================================================
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
 export PATH
 
 echo "install java start"
@@ -42,10 +40,12 @@ PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 export JAVA_HOME JRE_HOME PATH CLASSPATH
 EOF
 
-	source /etc/profile
+    source /etc/profile
+
+    chmod -R 755 /opt/jdk1.8.0_171
+
 	java -version 1>/dev/null 2>&1 && echo -e "\tinstall jdk success\n"
 else
 	echo -e "\tjdk already exist\n"
 fi
 
-################################################################################
