@@ -8,9 +8,12 @@
 #  @Last Modified : 2019-04-13 10:09:07
 
 #  @File Name     : install_docker_el7.sh
-#  @Description   :
+#  @Description   : 
 
 #================================================================
+
+# Usage:
+# curl -fsSL https://raw.githubusercontent.com/dongde/dongde/master/bash/install_docker_el7.sh | sh
 
 # uninstall old docker
 yum remove docker \
@@ -40,7 +43,7 @@ sed -i 's+download.docker.com+mirrors.tuna.tsinghua.edu.cn/docker-ce+' /etc/yum.
 
 # install docker-ce
 yum makecache fast
-yum install docker-ce
+yum install -y docker-ce
 
 # check install
 docker version >/dev/null 2>&1 && echo "install ok" || echo "install failed"
