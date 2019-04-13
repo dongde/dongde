@@ -45,5 +45,12 @@ sed -i 's+download.docker.com+mirrors.tuna.tsinghua.edu.cn/docker-ce+' /etc/yum.
 yum makecache fast
 yum install -y docker-ce
 
+# start docker-ce
+systemctl start docker
+
+# enable docker-ce
+systemctl enable docker
+#Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+
 # check install
 docker version >/dev/null 2>&1 && echo "install ok" || echo "install failed"
